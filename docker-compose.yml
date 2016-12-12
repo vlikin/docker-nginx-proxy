@@ -1,0 +1,13 @@
+version: "2"
+services:
+  nginx:
+    build: ./nginx-proxy
+    external_links:
+      - radarrisk_nginx_1:nginx-drupal-1
+    ports:
+      - "80:80"
+    networks:
+      - net
+networks:
+  net:
+    external: true
